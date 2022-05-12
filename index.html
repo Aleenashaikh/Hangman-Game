@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hangman Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Libre+Baskerville:wght@700&family=Lora:ital,wght@1,500&family=Oswald:wght@400;600&family=PT+Sans:ital,wght@1,700&family=Raleway:wght@500&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="body">
+        <div class="container" id="main">
+            <div id="section-1" class="section-1">
+                <div id="head" class="my-div">
+                    <h3 class="head">HANGMAN <br> GAME</h3>
+                    <button class="play" id="play" onclick="start()"><img src="images/play.png" alt=""></button><br>
+                    <button class="instructions" id="instructions" onclick="instruction()">Read Instructions</button>
+                </div>
+                <div>
+                </div>
+            </div>
+
+            <div class="section-2 flex hidden" id="section-2">
+                <div class="ins flex">
+                    <h4>INSTRUCTIONS:</h4>
+                    <ul class="flex">
+                        <li>Hangman is a word game where the goal is simply to find the missing word or words.</li>
+                        <li>You will be presented with a number of blank spaces representing the missing letters you
+                            need to find.</li>
+                        <li>If your chosen letter exists in the answer, then all places in the answer where that letter
+                            appear will be revealed.</li>
+                        <li>After you've revealed several letters, you may be able to guess what the answer is and fill
+                            in the remaining letters.</li>
+                        <li>Be warned, every time you guess a letter wrong you loose a life and the hangman begins to
+                            appear, piece by piece.</li>
+                        <li>Solve the puzzle before the hangman dies.</li>
+                    </ul>
+                    <button class="play" id="play" onclick="start()"><img src="images/play.png" alt="">Wanna play
+                        game?</button>
+                    <button class="back" id="back-btn" onclick="backToMain()"><img src="images/back-button.png"
+                            alt=""></button>
+                </div>
+            </div>
+
+            <div class="section-4 flex hidden" id="section-4">
+                <div class="cat">
+                    <button class="categories" onclick="init(this) ">MOVIES</button>
+                    <button class="categories" onclick="init(this) ">FAMOUS</button> <br>
+                    <button class="categories" onclick="init(this) ">GENERAL</button>
+                    <button class="categories" onclick="init(this) ">COUNTRY</button>
+                </div>
+                <button class="back" id="back-btn" onclick="backToMain()"><img src="images/back-button.png"
+                        alt=""></button>
+            </div>
+
+
+            <div class="section-3 flex hidden" id="section-3">
+                <div class="wordDiv" id="wordDiv"></div>
+                <div class="content-3" id="content-3">
+                    <div class="buttons" id="buttonsDiv">
+
+                    </div>
+                    <div><span class="lives">Your reamining lives are:</span><span class="lives" id="remLives"></span>
+                    </div>
+                    <p class="hint" id="hint" onclick="getHint()"></p>
+                    <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+
+                </div><button class="back back-3" id="back-btn" onclick="backToMain()"><img src="images/back-button.png"
+                        alt=""></button>
+            </div>
+
+            <div class="section-5 flex hidden" id="section-5">
+                <div class="content-5 flex">
+                    <h5 id="ex" class="ex"></h5>
+                    <h3><span>You Have</span><span id="res"></span></h3>
+                    <button onclick="reset()" class="resBtn">Play Again</button>
+                    <button onclick="backToMain()" class="resBtn">Go to main</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
